@@ -1,0 +1,82 @@
+<div class="conteudo-esquerdo">
+    <a role="button" class="btn btn btn-espaco-laranja btn-lg" href="<?php echo $this->baseUrl('/default/treinos/create'); ?>">
+        <i class="fa fa-user-plus"></i>&nbsp; Novo
+    </a>
+    <a role="button" class="btn btn btn-espaco btn-lg" href="<?php echo $this->baseUrl('/default/treinos/create-local'); ?>">
+        <i class="fa fa-plus-circle"></i>&nbsp; Local
+    </a>
+</div>
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Treinos Cadastrados (Busca)</h2>
+    </div>
+    <div class="panel-body" id="form-search">
+        <div class="row">
+            <div class="form-group col-md-4 col-xs-12">
+                <label>Local</label>
+                <input type="text" id="filtro-local" posicao="0" name="nome" value="" class="form-control"/>
+            </div>
+            <div class="form-group col-md-2 col-xs-12">
+                <label>Data</label>
+                <input type="text" id="filtro-data" posicao="1" name="camisa" value="" class="form-control mask-date"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br class="clear"/>
+<!--TABELA DE ATLETAS-->
+<div class="row">
+    <div class="col-md-12 col-xs-12 responsive">
+        <?php if (count($this->treinos)): ?>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->treinos as $treino): ?>
+                        <tr <?php echo ($treino['presenca'] == 'S' ? "class='success' title='Presença Cadastrada'" : ''); ?>>
+                            <td><?php echo $treino['local']; ?></td>
+                            <td><?php echo $treino['data']; ?></td>
+                            <td>
+                                <a href="<?php echo $this->baseUrl('/default/treinos/edit/id/' . $treino['id']); ?>" title="Editar"><i class="fa fa-edit" style="font-size: 20px;"></i></a>
+                                <a href="<?php echo $this->baseUrl('/default/treinos/presenca/id/' . $treino['id']); ?>" title="Aplicar presença"><i class="fa fa-users" style="font-size: 20px;"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#form-search input').keyup(function () {
+        var nomeFiltro = $(this).val().toLowerCase();
+        var eq = $(this).attr('posicao');
+        $('table tbody').find('tr').each(function () {
+            var conteudoCelula = $(this).find('td:eq(' + eq + ')').text();
+            var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+            $(this).css('display', corresponde ? '' : 'none');
+        });
+    });
+
+    $('#treino-data').change(function () {
+        if (!isData($(this).val())) {
+            bootbox.alert("Data do treino inválida!");
+            $(this).val('');
+        }
+    });
+
+    $("#form-cadastro").submit(function () {
+        if (!Validation.requiredForm('#form-cadastro')) {
+            bootbox.alert("Preencha os campos obrigatorios realcados em vermelho!");
+            return false;
+        }
+    });
+</script>

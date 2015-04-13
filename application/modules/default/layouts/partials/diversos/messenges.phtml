@@ -1,0 +1,36 @@
+<?php if (!empty($this->priority)) { ?>
+    <?php if (!empty($this->priority)) { ?>
+        <?php foreach ($this->priority as $label => $messages) { ?>
+            <?php
+            switch ($label) {
+                case 'erro':
+                    $class = 'type-danger';
+                    $title = 'Erro';
+                    break;
+                case 'alerta':
+                    $class = 'type-info';
+                    $title = 'Informação';
+                    break;
+                case 'sucesso':
+                    $class = 'type-success';
+                    $title = 'Sucesso';
+                    break;
+
+                default:
+                    $class = 'type-info';
+                    $title = 'Informação';
+            }
+            ?>
+            
+            <?php if (!empty($messages)) { ?>
+                <script type="text/javascript">
+                <?php foreach ($messages as $msg) { ?>
+                        alerta('<?php echo $msg; ?>');
+                <?php } ?>
+                </script>
+            <?php } ?>
+        <?php } ?>
+        <?php
+    }
+}
+

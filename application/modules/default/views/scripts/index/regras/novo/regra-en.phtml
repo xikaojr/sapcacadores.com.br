@@ -1,0 +1,70 @@
+<style type="text/css">
+    p {line-height: 1.7em}
+</style>
+<div class="title-form" style="height: 50px">
+    <div style="float: left">
+        <h2><?php echo $this->translate->_('Regras'); ?></h2>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="conteudo-esquerdo">
+    <br clear="all" />
+</div>
+
+<div class="conteudo-direito">
+
+    <div>
+      <style type="text/css">
+p { margin-bottom: 0.21cm; }a:link { color: rgb(0, 0, 255); }</style>
+<h2 align="CENTER" class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<strong><font face="Verdana, sans-serif">RULES FOR PARTICIPATION IN EVENTS - SAE BRASIL</font></strong></h2>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	&nbsp;</p>
+<p align="JUSTIFY" class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">Registration:</font></p>
+<p align="JUSTIFY" class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">Registration for the events organized by SAE BRASIL may be made:</font></p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0cm;">
+	<font face="Verdana, sans-serif"><span lang="en-US"><span style="font-weight: normal;">1.1 Through the Internet: the person must access the website </span></span></font><u><a href="http://www.saebrasil.org.br/"><font face="Verdana, sans-serif"><span lang="en-US"><b>www.saebrasil.org.br</b></span></font></a></u><font face="Verdana, sans-serif"><span lang="en-US"><span style="font-weight: normal;"> and choose the event of interest.</span></span></font></p>
+<p align="JUSTIFY" class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">1.2 Applications are available on the Internet within one business days before the event for credit cards.</font></p>
+<p align="JUSTIFY" class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">1.3 The credit card payment may be made in one installment.</font></p>
+<p align="JUSTIFY" class="western" lang="en-US" style="margin-bottom: 0cm;">
+	&nbsp;</p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">General remarks:</font></p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">2.1 The frequency events is allowed only for those regularly enrolled.</font></p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">2.2 It is not permitted to transfer registration to another event, without the prior formal request.</font></p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">2.3 In the event, at the registration, will be asked to identify the insured which may be made through any photo identity document (ID, professional portfolio, others.).</font></p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">2.4 Observe the information in the Statement of Cancellation made before the completion of enrollment.</font></p>
+<p class="western" lang="en-US" style="margin-bottom: 0cm; font-weight: normal;">
+	<font face="Verdana, sans-serif">2.5 The cases foreseen in this Regulation shall be referred for determination of SAE BRASIL.</font></p>  
+    </div>
+    
+
+    <label style="cursor: pointer">
+        <input type="checkbox" name="termos" value="1" />
+        <?php echo $this->translate->_('Concordo com os termos citados acima'); ?>
+    </label>
+
+    <div class="local_rodape">
+        <input class="ui-corner-all botaoAssociado" type="button" value="<?php echo $this->translate->_('Prosseguir'); ?>" onclick="checkTermos(); void(0);" />
+    </div>
+
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+    function checkTermos() {
+        if($("input[name='termos']").is(":checked")) {
+            window.location.href = baseUrl + "/inscricao/inscricoes/atividades";
+        } else {
+            Sistema.alert("<?php echo $this->translate->_('Para prosseguir e necessario concordar os termos das regras'); ?>");
+        }
+    }
+</script>

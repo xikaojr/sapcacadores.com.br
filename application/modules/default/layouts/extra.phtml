@@ -1,0 +1,152 @@
+<?php header('Content-type: text/html; charset=UTF-8'); ?>
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <?php
+        echo $this->headMeta()
+                ->appendHttpEquiv("Content-Type", "text/html; charset=utf-8")
+                ->appendHttpEquiv('author', 'GridStudios')
+                ->appendHttpEquiv('language', 'pt-br'), "\n";
+        ?>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <?php echo $this->partial('partials/css.phtml', 'default'); ?>
+            <?php echo $this->partial('partials/js.phtml', 'default'); ?>
+
+            <script type="text/javascript">
+                var baseUrl = '<?php echo $this->baseUrl(); ?>';
+                var controllerName = '<?php echo Zend_Controller_Front::getInstance()->getRequest()->getControllerName(); ?>';
+                var moduleName = '<?php echo Zend_Controller_Front::getInstance()->getRequest()->getModuleName(); ?>';
+
+//                bootbox = window.parent.bootbox;
+
+                function showMessenger(msg, callback) {
+                    if (callback) {
+                        bootbox.alert(msg, callback);
+                    } else {
+                        bootbox.alert(msg);
+                    }
+                }
+
+                $(document).ready(function () {
+                    Sistemas.aplicarMascaras();
+                    $('#fechar').click(function () {
+                        Sistema.closeDialog();
+                    });
+                });
+
+//
+//                $(function () {
+//
+//                    // grab the initial top offset of the navigation 
+//                    var sticky_navigation_offset_top = $('.topo-menu').offset().top;
+//
+//                    // our function that decides weather the navigation bar should have "fixed" css position or not.
+//                    var sticky_navigation = function () {
+//                        var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+//
+//                        // if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+//                        if (scroll_top > sticky_navigation_offset_top) {
+//                            $('.topo-menu').css({'position': 'fixed', 'top': 0, 'left': 0});
+//                        } else {
+//                            $('.topo-menu').css({'position': 'relative'});
+//                        }
+//                    };
+//
+//                    // run our function on load
+////                    sticky_navigation();
+//
+//                    // and run it again every time you scroll
+////                    $(window).scroll(function () {
+////                        sticky_navigation();
+////                    });
+//
+//                });
+
+//                // Hide Header on on scroll down
+//                var didScroll;
+//                var lastScrollTop = 0;
+//                var delta = 5;
+//                var navbarHeight = $('.topo-menu').outerHeight();
+//
+//                $(window).scroll(function (event) {
+//                    didScroll = true;
+//                });
+//
+//                setInterval(function () {
+//                    if (didScroll) {
+//                        hasScrolled();
+//                        didScroll = false;
+//                    }
+//                }, 250);
+//
+//                function hasScrolled() {
+//                    var st = $(this).scrollTop();
+//
+//                    // Make sure they scroll more than delta
+//                    if (Math.abs(lastScrollTop - st) <= delta)
+//                        return;
+//
+//                    // If they scrolled down and are past the navbar, add class .nav-up.
+//                    // This is necessary so you never see what is "behind" the navbar.
+//                    if (st > lastScrollTop && st > navbarHeight) {
+//                        // Scroll Down
+//                        $('.topo-menu').removeClass('nav-down').addClass('nav-up');
+//                    } else {
+//                        // Scroll Up
+//                        if (st + $(window).height() < $(document).height()) {
+//                            $('.topo-menu').removeClass('nav-up').addClass('nav-down');
+//                        }
+//                    }
+//
+//                    lastScrollTop = st;
+//                }
+
+            </script>
+
+            <?php
+            echo $this->headLink();
+            echo $this->headScript();
+            ?>
+
+            <style>
+                body{background: none !important;}
+                .container{width: 100% !important; margin-left: -20px;}
+            </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div id="finder_box"></div>
+            <div class="aw-LoadingStatus" id="initialLoading" aria-hidden="true" >
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="<?php echo $this->baseUrl() ?>/images/default/loading_medio.gif"></td>
+                            <td>Aguarde...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container theme-showcase conteudo-interno" role="main">
+                <br/>
+                <div class="container-fluid">
+                    <?php echo $this->partial('partials/diversos/message-dialog.phtml', 'default', array('priority' => $this->helperPriorityMessenger())); ?>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+                <br/>
+
+                <script type="text/javascript">
+                    $("#initialLoading").ajaxStart(function () {
+                        $(this).show();
+                    }).ajaxStop(function () {
+                        $(this).hide();
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

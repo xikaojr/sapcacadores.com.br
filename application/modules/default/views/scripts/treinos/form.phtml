@@ -1,0 +1,47 @@
+<form role="form" method="post" action="<?php echo $this->baseUrl('/default/treinos/create'); ?>" enctype="multipart/form-data" class="form" id="form-cadastro">
+    <?php echo $this->form->id; ?>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php echo 'Dados pessoais'; ?>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <?php echo $this->form->local_id; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->data; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3 col-xs-12">
+            <input type="submit" name="finalizar" value="Salvar" class="btn btn-espaco-verde"/>
+            <input type="reset" name="limpar" value="Limpar" class="btn btn-espaco-laranja"/>
+            <input type="button" name="voltar" value="Voltar" class="btn btn-espaco" id="backToIndex"/>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $('#treino-data_nascimento').change(function () {
+        if (!isData($(this).val())) {
+            bootbox.alert("Data do treino é inválida!");
+            $(this).val('');
+        }
+    });
+
+    $("#form-cadastro").submit(function () {
+        if (!Validation.requiredForm('#form-cadastro')) {
+            bootbox.alert("Preencha os campos obrigatorios realcados em vermelho!");
+            return false;
+        }
+    });
+
+
+</script>

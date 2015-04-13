@@ -1,0 +1,55 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <?php echo $this->translate->_('Termo de cancelamento'); ?>
+        </div>
+        <div class="panel-body" style="max-height: 300px; overflow: auto;text-align: justify; padding: 7px;">
+            <p>
+                <strong>Cancelamento de inscrição</strong>
+            </p>
+
+            <p>
+                1. Na impossibilidade de comparecimento ao evento, o inscrito poderá
+                cancelar a inscrição conforme as seguintes regras:
+            </p>
+
+            <p>
+                <strong>
+                    a) Com reembolso integral do valor da inscrição:          
+                    ÚNICA E EXCLUSIVAMENTE PARA INSCRIÇÕES FEITAS PELA INTERNET,
+                </strong>
+                em até 7 dias do pagamento, desde que com antecedência mínima de 48
+                horas do dia do início do evento, mediante apresentação de requerimento
+                por escrito, para o e-mail eventos@saebrasil.org.br, solicitando o
+                cancelamento e o correspondente reembolso, informando os dados bancários
+                para depósito.
+            </p>
+
+            <p>
+                <strong>
+                    b) Valor total da inscrição convertido em crédito para utilização
+                    futura:
+                </strong>      
+
+                Em até 48 horas antes do início do evento, mediante apresentação de
+                requerimento por escrito, para o e-mail eventos@saebrasil.org.br,
+                solicitando a conversão do crédito,
+                <strong>
+                    que deverá ser utilizado no
+                    prazo de 90 dias, a contar da data da solicitação.
+                </strong>
+            </p>
+
+            <p>
+                2. <u>O inscrito que não encaminhar o requerimento</u> de cancelamento e/ou
+            não indicar o evento em que vai utilizar o crédito <u>dentro dos prazos
+                acima mencionados perderá o direito ao reembolso/crédito.</u>
+            </p>
+
+            <label style="cursor: pointer">
+                <input type="checkbox" name="termo_cancelamento" value="true" />
+                <?php echo $this->translate->_('Li e aceito o termo de cancelamento.'); ?>
+            </label>
+        </div>
+    </div>
+</div>

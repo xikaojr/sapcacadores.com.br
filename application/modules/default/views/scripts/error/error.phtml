@@ -1,0 +1,21 @@
+
+
+<link rel="stylesheet" href="/css/default/bootstrap-3.1.1/bootstrap.min.css" type="text/css" />
+<div class="container">
+    <h1>Ops! ocorreu um erro.</h1>
+
+
+    <h3>Informação do erro:</h3>
+    <div class="alert alert-danger">
+        <b>Mensage:</b>
+        <?php echo $this->exception->getMessage() ?>
+    </div>
+
+    <?php if ('development' == APP_ENV): ?>
+        <h3>Stack trace:</h3>
+        <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+
+        <h3>Request Parameters:</h3>
+        <pre><?php var_dump($this->request->getParams()) ?></pre>
+    <?php endif ?>
+</div>

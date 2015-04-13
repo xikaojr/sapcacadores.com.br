@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="author" content="Itarget" />
+        <meta http-equiv="language" content="pt-br" />
+        <title>iCongresso :: Itarget Tecnologia</title>
+    </head>
+    <body>
+        <?php echo sprintf('<p><strong>%s</strong></p><p>%s</p>', $this->paramsEmail['tipo'], $this->paramsEmail['texto']); ?>
+
+        <p style="color: #60676a; margin:0px; padding: 0px; font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;">
+            <?php echo $this->translate->_('Em caso de duvidas, queira por gentileza, entrar em contato conosco.') ?>
+        </p>
+
+        <p style="font-size: 11px">
+            <br /><img src="<?php echo $this->paramsEmail['logo_rodape']; ?>" border="0" /><br />
+           
+        </p>
+
+    </body>
+</html>

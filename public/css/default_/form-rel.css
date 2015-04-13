@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+.relatorio-form{
+	font-size:14px;
+}
+.relatorio-form .span5{
+	margin:0 0 20px 0;
+}
+.relatorio-form strong{font-weight:bold; color: #979797; font-size:12px;}
+.relatorio-form h5{font-size:14px; font-weight:bold;}
+.relatorio-form li{border:0 !important;}
+.relatorio-form li ul li{margin:0 0 0 40px;}
+
+.relatorio-form li.accordion-group{background:#E9E9E9; padding:5px; margin:0 0 5px 0; border-radius:5px;}
+
+.display-block{
+	display:block !important;
+	clear:both;
+}

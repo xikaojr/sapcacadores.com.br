@@ -1,0 +1,188 @@
+<form role="form" method="post" action="<?php echo $this->baseUrl('/default/atletas/create-outside'); ?>" enctype="multipart/form-data" class="form" id="form-cadastro">
+    <?php echo $this->form->id; ?>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php echo 'Dados pessoais'; ?>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <?php echo $this->form->nome; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->cpf; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->passaporte; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->data_nascimento; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->situacao; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->rg; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->estado_civil; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->uf; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->municipio; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->sexo; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->entrou_em; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <?php echo $this->form->email; ?>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <?php echo $this->form->altura; ?>
+                        </div>
+                        <div class="form-group col-md-1" style="width: 101px;">
+                            <?php echo $this->form->peso; ?>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <?php echo $this->form->numero_camisa; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->plano_saude; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->foto; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <img id="preview-image" src="<?php echo $this->foto; ?>?rand=<?php echo rand(9, 99999) ?>" alt="" border="0" width="180" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php echo 'Endereço e Contato'; ?>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->cep; ?>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <?php echo $this->form->logradouro; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->bairro; ?>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <?php echo $this->form->log_numero; ?>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <?php echo $this->form->complemento; ?>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->telefone; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->celular; ?>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <?php echo $this->form->nome_contato_emergencia; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->telefone_contato_emergencia; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <?php echo $this->form->parentesto_contato_emergencia; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php echo 'Informações Complementares'; ?>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <?php echo $this->form->outras_informacoes; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3 col-xs-12">
+            <input type="submit" name="finalizar" value="Salvar" class="btn btn-espaco-verde"/>
+            <input type="reset" name="limpar" value="Limpar" class="btn btn-espaco-laranja"/>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('input').keypress(function (e) {
+            var code = null;
+            code = (e.keyCode ? e.keyCode : e.which);
+            return (code == 13) ? false : true;
+        });
+    });
+
+    $('#atleta-cpf').change(function () {
+        if (!isCpf($(this).val())) {
+            bootbox.alert("Cpf inválido!");
+            $(this).val('');
+        }
+    });
+
+    $('#atleta-data_nascimento').change(function () {
+        if (!isData($(this).val())) {
+            bootbox.alert("Data de nascimento inválido!");
+            $(this).val('');
+        }
+    });
+
+    $('#atleta-uf').change(function () {
+        Sistemas.getMunicipios($(this).val(), $('#atleta-municipio'), '<?php echo $this->form->municipio->getValue(); ?>');
+    }).change();
+
+    $('#atleta-cep').change(function () {
+        Sistemas.cepGeneric($(this).val(), 'atleta');
+    });
+
+    $("#form-cadastro").submit(function () {
+        if (!Validation.requiredForm('#form-cadastro')) {
+            bootbox.alert("Preencha os campos obrigatorios realcados em vermelho!");
+            return false;
+        }
+
+        $("#initialLoading").show();
+    });
+
+
+</script>

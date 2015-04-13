@@ -1,0 +1,26 @@
+<?php
+$auth = Zend_Auth::getInstance();
+$linkHash = DOMINIO . '/index/index/hash/' . $auth->getIdentity()->hash;
+$configPath = CONFIGS_PATH . "clientes/" . CLIENTE;
+?>
+<div id="outros-sistemas">
+    <ul>
+        <?php if (is_file($configPath . '/icase.ini') && SISTEMA != 'icase'): ?>
+            <li>
+                <a href="http://icase.<?php echo $linkHash ?>">iCase</a>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_file($configPath . '/icongresso.ini') && SISTEMA != 'icongresso'): ?>
+            <li>
+                <a href="http://icongresso.<?php echo $linkHash ?>">iCongresso</a>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_file($configPath . '/daywork.ini') && SISTEMA != 'daywork'): ?>
+            <li>
+                <a href="http://daywork.<?php echo $linkHash ?>">DayWork</a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>

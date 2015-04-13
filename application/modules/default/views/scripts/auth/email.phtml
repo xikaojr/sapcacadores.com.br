@@ -1,0 +1,18 @@
+<?php $link = "http://" . $_SERVER['HTTP_HOST'] . $this->baseUrl("/inscricao/auth/redefinir-senha/centro-custo/{$this->centroCusto}/hash/{$this->hash}"); ?>
+<h3 style="color:#003366; margin:0px; padding: 0px; font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;">
+    <?php echo $this->dados['nome'] ?>, <?php echo $this->translate->_('Altere sua senha'); ?>
+</h3>
+<br />
+
+<p style="color: #60676a; margin:0px; padding: 0px; font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;">
+    <?php echo $this->translate->_('Clique no link abaixo para definir uma nova senha agora mesmo.') ?>
+</p>
+<br />
+
+<a href="<?php echo $link ?>" target="_blank"><?php echo $link ?></a>
+<br />
+<br />
+
+<p style="color: #60676a; margin:0px; padding: 0px; font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;">
+    <?php echo $this->translate->_('Se voce nao solicitou a alteracao de sua senha, desconsidere esta mensagem.') ?>
+</p>

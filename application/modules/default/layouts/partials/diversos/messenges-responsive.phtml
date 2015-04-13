@@ -1,0 +1,47 @@
+<?php if (!empty($this->priority)) { ?>
+
+    <?php $translate = Zend_Registry::get('translate'); ?>
+    <?php if (!empty($this->priority)) { ?>
+        <?php foreach ($this->priority as $label => $messages) { ?>
+            <?php
+            switch ($label) {
+                case 'erro':
+                    $class['principal'] = 'alert-error';
+                    $class['icon'] = 'icon-remove';
+                    //$text = $translate->_('Erro');
+                    break;
+                case 'alerta':
+                    $class['principal'] = 'alert-warning';
+                    $class['icon'] = '';
+                    //$text = $translate->_('Alerta');
+                    break;
+                case 'sucesso':
+                    $class['principal'] = 'alert-block alert-success';
+                    $class['icon'] = 'icon-ok';
+                    // $text = $translate->_('Sucesso');
+                    break;
+
+                default: $class['principal'] = 'alert-warning';
+            }
+            ?>
+            <div class="alert <?php echo $class['principal']; ?>" id="MensagensSistema">
+                <button type="button" class="close" data-dismiss="alert" onclick="$('#MensagensSistema').remove();">
+                    <i class="icon-remove"></i>
+                </button>
+                <strong>
+                    <i class="<?php echo $class['icon']; ?>"></i>
+                    <?php // echo $text; ?>
+                </strong>
+                <?php if (!empty($messages)) { ?>
+                    <?php foreach ($messages as $msg) { ?>
+                        <?php echo $msg; ?>
+                    <?php } ?>
+                <?php } ?>
+                <br />
+            </div>
+        <?php } ?>
+    <?php } ?>
+    <script type="text/javascript">
+            parent.scrollTo(0, 0);
+    </script>
+<?php } ?>

@@ -1,0 +1,106 @@
+<?php header('Content-type: text/html; charset=UTF-8'); ?>
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/espaco/geral.css" rel="stylesheet" type="text/css" />
+        <?php
+        echo $this->headMeta()
+                ->appendHttpEquiv("Content-Type", "text/html; charset=utf-8")
+                ->appendHttpEquiv('author', 'Itarget')
+                ->appendHttpEquiv('language', 'pt-br'), "\n";
+        ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <?php echo $this->partial('partials/css.phtml', 'default'); ?>
+            <?php echo $this->partial('partials/js.phtml', 'default'); ?>
+
+
+            <script type="text/javascript">
+                var baseUrl = '<?php echo $this->baseUrl(); ?>';
+                var controllerName = '<?php echo Zend_Controller_Front::getInstance()->getRequest()->getControllerName(); ?>';
+
+                function showMessenger(msg, callback) {
+                    if (callback) {
+                        bootbox.alert(msg, callback);
+                    } else {
+                        bootbox.alert(msg);
+                    }
+                }
+
+                $(document).ready(function () {
+                    Sistemas.aplicarMascaras();
+
+                    $('#fechar').click(function () {
+                        Sistema.closeDialog();
+                    });
+                });
+
+//                jQuery('#loginTab a').click(function (e) {
+//                    e.preventDefault();
+//                    jQuery(this).tab('show');
+//                })
+            </script>
+
+            <?php
+            echo $this->headLink();
+            echo $this->headScript();
+            ?>
+
+
+            <style>
+                -webkit-validation-bubble {background-color: black;}
+                -webkit-validation-bubble-message {background-color: black;}
+                -webkit-validation-bubble-arrow {background-color: black;}
+                -webkit-validation-bubble-arrow-clipper {background-color: black;}
+
+                input:invalid { border: 1px solid red; }
+                input:valid { border: 1px solid green; }
+            </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div id="finder_box"></div>
+
+            <div class="aw-LoadingStatus" id="initialLoading" aria-hidden="true">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="<?php echo $this->baseUrl("/images/default/loading_medio.gif"); ?>"></td>
+                            <td>Aguarde...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="topo-fixo">
+                <div class="header">
+                    <div class="container">
+                        <div class="logo-cliente-principal">
+                            <img src="<?php echo $this->baseUrl('images/Logo-simbolo-menu-022.png'); ?>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="conteudo-clear">        
+                <div class="container">
+                    <?php echo $this->partial('partials/diversos/message-dialog.phtml', 'default', array('priority' => $this->helperPriorityMessenger())); ?>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+                <br/>
+                <script type="text/javascript">
+                    $("#initialLoading").ajaxStart(function () {
+                        $(this).show();
+                    }).ajaxStop(function () {
+                        $(this).hide();
+                    });
+                </script>
+            </div>
+            <div class="footer-login">
+                <div class="container">
+                    <img alt="Grid Studios" src="<?php echo $this->baseUrl("images/copygrid.png");?>" />
+                    <span>© 2014 - Grid Studios - Todos os direitos reservados</span>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

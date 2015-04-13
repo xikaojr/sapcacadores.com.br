@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "dropdown.linear.css";
+
+ul.dropdown-columnar ul li {position: static;width: 150px;}
+ul.dropdown-columnar ul ul { display: block !important; position: static;width: auto !important;}
+ul.dropdown-columnar ul ul li {float: none;}
+ul.dropdown-columnar ul ul ul { display: none; }
+ul.dropdown-columnar li.hover ul,
+ul.dropdown-columnar li:hover ul { display: block; }

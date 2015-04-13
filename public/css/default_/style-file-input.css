@@ -1,0 +1,35 @@
+.file-wrapper {
+  cursor: pointer;
+  display: inline-block;
+  /* overflow: hidden; */
+  position: relative;
+}
+.file-wrapper input {
+  cursor: pointer;
+  font-size: 100px;
+  height: 100%;
+  filter: alpha(opacity=1);
+  -moz-opacity: 0.01;
+  opacity: 0.01;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 380px !important; 
+}
+.file-wrapper .button {
+  background: #2B386A;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  margin-right: 5px;
+  padding: 4px 18px;
+  text-transform: uppercase;
+}
+.file-waper-text{
+  width: 200px !important;  
+}
+
+    

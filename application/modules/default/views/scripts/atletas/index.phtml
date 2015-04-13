@@ -1,0 +1,162 @@
+<div class="conteudo-esquerdo">
+    <a role="button" class="btn btn btn-espaco-laranja btn-lg" href="<?php echo $this->baseUrl('/default/atletas/create'); ?>">
+        <i class="fa fa-user-plus"></i>&nbsp; Novo
+    </a>
+    <a role="button" class="btn btn btn-espaco-verde btn-lg" href="<?php echo $this->baseUrl('/default/atletas/export-to-xls'); ?>">
+        <i class="fa fa-file-excel-o"></i>&nbsp; EXCEL
+    </a>
+</div>
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Atletas Cadastrados (Busca)</h2>
+    </div>
+    <div class="panel-body" id="form-search">
+        <div class="row">
+            <div class="form-group col-md-4 col-xs-12">
+                <label>Nome</label>
+                <input type="text" id="filtro-nome" posicao="0" name="nome" value="" class="form-control"/>
+            </div>
+            <div class="form-group col-md-3 col-xs-12">
+                <label>Apelido</label>
+                <input type="text" id="filtro-apelido" posicao="1" name="apelido" value="" class="form-control"/>
+            </div>
+            <div class="form-group col-md-1 col-xs-12">
+                <label>Camisa</label>
+                <input type="text" id="filtro-camisa" posicao="2" name="camisa" value="" class="form-control numeros"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br class="clear"/>
+<!--TABELA DE ATLETAS-->
+<div class="row">
+    <div class="col-md-12 col-xs-12 responsive">
+        <?php if (count($this->atletas)): ?>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Apelido</th>
+                        <th>Camisa</th>
+                        <th>Nascimento</th>   
+                        <th>Situação</th>   
+                        <th>Treinos</th>   
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 0; ?>
+                    <?php foreach ($this->atletas as $atleta): ?>
+                        <?php
+                        if ($atleta['qtd_presenca'] == 0 && $atleta['total_treinos'] == 0) {
+                            $percent = 0;
+                        } else {
+                            $percent = (($atleta['qtd_presenca'] / $atleta['total_treinos']) * 100);
+                        }
+                        ?>
+                        <tr>
+                            <td>
+                                <?php echo ucwords(strtolower($atleta['nome'])); ?>&nbsp; 
+                                <?php echo $atleta['data_nascimento'] == DATA_ATUAL ? "<i title='Hoje é o aniversário deste caçador!!' class='fa fa-birthday-cake'></i>" : ''; ?>&nbsp;
+                                <?php echo $atleta['novato'] == 'T' ? "<i title='Caçador Novato!' class='fa fa-github-alt'></i>" : ''; ?>
+                            </td>
+                            <td>
+                                <?php if (!empty($atleta['apelido'])): ?>
+                                    <?php echo $atleta['apelido']; ?>
+                                <?php else: ?>
+                                    <a href = "javascript:;" onclick="setApelido('<?php echo $atleta['id']; ?>')" title = "Colocar apelido neste atleta"><i class = "fa fa-child" style = "font-size: 20px;"></i></a>
+                                <?php endif; ?>
+                            </td>
+                            <td><?php echo $atleta['numero_camisa']; ?></td>
+                            <td><?php echo App_Date::ptBr($atleta['data_nascimento'], false); ?></td>
+                            <td><?php echo App_Status::situacao($atleta['situacao']); ?></td>
+                            <td><?php echo $atleta['total_treinos'] . "/ " . $atleta['qtd_presenca'] . "/ " . number_format($percent, 2) . "%"; ?></td>
+                            <td>
+                                <a href="<?php echo $this->baseUrl('/default/atletas/edit/id/' . $atleta['id']); ?>" title="Editar"><i class="fa fa-edit" style="font-size: 20px;"></i></a>
+                                <?php if ($atleta['situacao'] == Atleta::ATIVO): ?>
+                                    <a href = "javascript:;" onclick = "alterStatus('<?php echo Atleta::INATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Inativar Atleta"><i class = "fa fa-times" style = "font-size: 20px;"></i></a>
+                                <?php else: ?>
+                                    <a href = "javascript:;" onclick = "alterStatus('<?php echo Atleta::ATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Ativar Atleta"><i class = "fa fa-check" style = "font-size: 20px;"></i></a>
+                                    <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                    <tr>
+                        <td>Total de Atletas: <?php echo $i; ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#form-search input').keyup(function () {
+        var nomeFiltro = $(this).val().toLowerCase();
+        var eq = $(this).attr('posicao');
+        $('table tbody').find('tr').each(function () {
+            var conteudoCelula = $(this).find('td:eq(' + eq + ')').text();
+            var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+            $(this).css('display', corresponde ? '' : 'none');
+        });
+    });
+    /**
+     * Ativar atleta, alterar status para ATIVO
+     * @param {int} id identifcador do atleta
+     * @param {int} status novo status do atleta
+     */
+    function alterStatus(status, id) {
+
+        $.ajax({
+            type: 'POST',
+            data: {'id': id, 'status': status},
+            dataType: 'json',
+            url: baseUrl + "/atletas/ativar",
+            success: function (json) {
+                if (json.status) {
+                    bootbox.alert(json.msg, function () {
+                        location.href = location.href;
+                    });
+                } else {
+                    bootbox.alert(json.msg);
+                }
+            }
+        });
+    }
+
+    /**
+     * Setar um apelido para o atleta
+     * @param {int} id identifcador do atleta
+     */
+    function setApelido(id) {
+        bootbox.prompt({
+            title: "Como é chamado este atleta ?",
+            value: "",
+            callback: function (result) {
+                if (result === null) {
+                    return false;
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        data: {'id': id, 'apelido': result},
+                        dataType: 'json',
+                        url: baseUrl + "/atletas/set-apelido",
+                        success: function (json) {
+                            if (json.status) {
+                                bootbox.alert(json.msg, function () {
+                                    location.href = location.href;
+                                });
+                            } else {
+                                bootbox.alert(json.msg);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+    }
+</script>

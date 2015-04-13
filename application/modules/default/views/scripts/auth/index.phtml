@@ -1,0 +1,96 @@
+<div class="box-login-externo">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#acessarConta" onclick="reduzirBox();" role="tab" data-toggle="tab" title="Acessar minha conta">Acessar minha conta</a></li>
+        <!--<li role="presentation"><a href="#novoCadastro" role="tab" data-toggle="tab" title="Novo cadastro">Novo cadastro</a></li>-->
+    </ul>
+    <div class="row box-login">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="acessarConta">
+                <div class="col-lg-12">
+                    <form method="POST" action="<?php echo $this->baseUrl("default/auth/login/"); ?>" id="form-login">
+                        <div class="form-group">
+                            <?php echo $this->form->login->setAttrib('required', 'required'); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->form->senha->setAttrib('required', 'required'); ?>
+                        </div>
+                        <button type="submit" class="btn btn-espaco btn-lg btn-block">
+                            <i class="fa fa-lock"></i>Acessar
+                        </button>
+                        <div class="checkbox">
+                            <a id="esqueci-senha" class="pull-right" href="#">Esqueci minha senha</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-esqueci-senha" class="modal fade">
+    <form method="post" action="#" id="form-remeber-password">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- dialog heade -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    Esqueci minha senha <i class="fa fa-key"></i>
+                </div>
+                <!-- dialog body -->
+                <div class="modal-body">
+                    <div class="bootbox-body">
+                        <label>Informe seu e-mail de cadastro</label>
+                        <input required="required" type="text" name="email" class="email-input form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Verificar e enviar" class="btn btn-espaco" />
+                    <button type="button" class="btn btn-espaco" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    $('#form-login-icongresso').submit(function () {
+        $('#initialLoading').show();
+    });
+
+    /**
+     * @param {int} cc CENTRO DE CUSTO
+     */
+    $('#esqueci-senha').click(function () {
+        $('input[name="email"]').val('');
+        $('#modal-esqueci-senha').modal({
+            "backdrop": "static",
+            "keyboard": true,
+            "show": true
+        });
+    });
+
+    $('#form-remeber-password').submit(function () {
+        $.post(baseUrl + "/inscricao/auth/remember-password", $(this).serialize(), function (data) {
+
+            if (data && data.status) {
+                showMessenger(data.msg);
+                $('#modal-esqueci-senha').modal('hide');
+                $('#login_inscricao-login').val(data.email);
+            } else {
+                showMessenger(data.msg);
+            }
+
+        }, "json");
+
+        return false;
+    });
+
+    /**
+     * reduzirBoxdeLogin
+     */
+    function reduzirBox() {
+        $('.box-login-externo').css('max-width', '400px');
+    }
+</script>

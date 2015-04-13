@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8'); ?>
+    </head>
+    <body>
+        <h1 style="font-family:Arial, Helvetica, sans-serif; font-size:15px; margin-top: 15px;">{{titulo}}</h1><br />
+        <div style="height:200px;">
+            <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/images/clientes/<?php echo CLIENTE ?>/logoP.jpg" alt="" border="0" />
+        </div>
+        <br />
+        <table id="table" class="tablesorter" style="font-family:Arial, Helvetica, sans-serif;  font-size: 13px; width: 100%; float: left; border-collapse: collapse; margin-top: 30px; margin-bottom: 30px;">
+        {{tableList}}
+        </table>
+    </body>
+</html>

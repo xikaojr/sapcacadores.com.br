@@ -1,0 +1,61 @@
+<form role="form" method="post" action="<?php echo $this->baseUrl('/default/treinos/presenca/id/' . $this->treino['id']); ?>" class="form" id="form-cadastro">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <?php echo $this->form->treino_id->setValue($this->treino['id']); ?>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php echo 'Treino'; ?>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Local: </label>
+                            <?php echo $this->treino['local']; ?>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Data:</label>
+                            <?php echo $this->treino['data']; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-5 col-xs-12">
+                            <input type="checkbox" value="" id="checkAll" /> <label>Marcar Todos</label>
+                            <br/><?php echo $this->form->atleta_id ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3 col-xs-12">
+            <input type="submit" name="finalizar" value="Salvar" class="btn btn-espaco-verde"/>
+            <input type="reset" name="limpar" value="Limpar" class="btn btn-espaco-laranja"/>
+            <input type="button" name="voltar" value="Voltar" class="btn btn-espaco" id="backToIndex"/>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#checkAll').click(function (event) {  //on click
+            if (this.checked) { // check select status
+                $("input[id*='presenca-atleta_id']").each(function () { //loop through each checkbox
+                    this.checked = true;  //select all checkboxes with class "checkbox1"              
+                });
+            } else {
+                $("input[id*='presenca-atleta_id']").each(function () { //loop through each checkbox
+                    this.checked = false; //deselect all checkboxes with class "checkbox1"                      
+                });
+            }
+        });
+    });
+
+    $("#form-cadastro").submit(function () {
+        if ($("input[id*='presenca-atleta_id']:checked").length < 1) {
+            bootbox.alert("Selecione pelo menos um atleta!");
+            return false;
+        }
+    });
+
+</script>

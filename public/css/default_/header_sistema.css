@@ -1,0 +1,773 @@
+/*TODO O HEADER DO SISTEMA FICA AQUI @TODO LEMBRAR DE ORGANIZAR*/
+
+
+/* CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/' . SISTEMA . '.css'*/
+/* FIM DO CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/' . SISTEMA . '.css'*/
+
+/* CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/form.css'*/
+.marca_local {float:left; height:50px; margin-right: 15px; }
+.marca_local2 {float:left;  margin-right: 15px;}
+.marca_local2 div {float:left;  }
+.marca_local2 label {float:left;}
+.marca_local2 input {float:left;}
+
+.mini {width:43px!important;}
+.intermediario {width:141px!important;}
+.pequeno {width:86px!important;}
+.date { width:70px!important; }
+.medio {width:197px!important;}
+.grande {width:308px !important;}
+
+select.pequeno {width:98px!important;}
+select.medio {width:209px!important;}
+select.grande {width:320px !important;}
+
+.local_foto {width:130px; height:160px; background-color:#bf1e2e; float:right; overflow:hidden}
+
+.local_rodape {clear:both; width:100%;padding-top: 15px; padding-bottom:15px}
+.local_rodape input{ color: #333333 !important; float:left !important; margin-right:15px !important;}
+.local_rodape input[type="submit"],
+.local_rodape input[type="button"],
+.local_rodape input[type="reset"],
+.local_rodape button {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F1F1F1 50%, #E1E1E1 51%, #F6F6F6 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #BBBBBB !important;
+    border-radius: 5px;
+    color: #333333 !important;
+}
+
+.cad_local {display:block; clear:both}
+ul.errors {margin: 3px;padding: 3px;float: right;font-size: 11px;color: #bf1e2e;}
+
+.form fieldset div.border { border: 1px solid #eee; margin-bottom:10px; padding: 0 5px 5px 5px; }
+
+.form label { float:none; text-align:left; display:block; clear:both; padding:0; margin:0; }
+.form label span { color:#008000; font-size:14px; font-weight:bold; }
+.form label.box { padding:3px; }
+.form label.big { width:250px; white-space: nowrap; }
+.form label.required { font-weight:bold; }
+.form label.for-box { padding-left:20px; margin-top:3px; _margin: 6px 0 0 0; /* IE Win */ }
+
+.form fieldset{ border:0; padding:2px; margin:0px; }
+.form fieldset.first { border-top:1px solid #CCC; margin:10px 0 10px 0; }
+
+.form legend { font-weight:bold; font-size:110%; color:#003366; padding:5px; margin:10px 0 10px 0; }
+.form legend span { font-weight:normal; color:#666; }
+/* andre */
+.form legend.newlegend { font-size:100%; margin:0 0 5px 0; padding: 0; }
+
+.form input.min { width:35px; }
+.form input.min2 { width:50px; }
+.form input.small { width:70px; }
+.form input.small2 { width:110px; }
+.form input.normal { width:200px; }
+.form input.normal2 { width:250px; }
+.form input.big,
+.form textarea.big,
+.form select.big { width:340px; }
+.form input.big2,
+.form textarea.big2,
+.form select.big2 { width:460px; }
+.form input.gig,
+.form textarea.gig,
+.form select.gig { width:98%; }
+.form input.tel { width:90px; }
+.form input.cpf { width:100px; }
+.form input.box { position:absolute; border:0; }
+.form input.newsmall { width:60px; }
+
+/* OBS */
+.form fieldset div p.obs { margin:0; padding:0; color:#999; font-size:10px; }
+.form fieldset div p.obs span { font-weight:bold; }
+
+.form fieldset.two-columns { display:block; clear:both; }
+.form fieldset.two-columns div.half { width:50%; }
+.form fieldset.two-columns div.left,
+.form fieldset.two-columns div.right { display:inline; float:left; }
+
+/* andre */
+.form fieldset.newfieldset { border: 1px solid #E4E4E4; }
+
+/* three col */
+.form fieldset.three-columns { display:block; clear:both;}
+.form fieldset.three-columns div.half { width:30.333%; }
+.form fieldset.three-columns div.left,
+.form fieldset.three-columns div.middle,
+.form fieldset.three-columns div.right { display:inline; float:left; }
+
+/* Many columns */
+.form fieldset.many-columns { display:block; clear:both; }
+.form fieldset.many-columns div.col { display:inline; float:left; }
+
+/*MISC*/
+.form a.find { vertical-align:middle; text-indent:-10000px; }
+
+.form .margin-right-5px { margin-right:5px; }
+.form .margin-right-10px { margin-right:13px; }
+.form .margin-right-20px { margin-right:50px; }
+
+.form .margin-left-6px { margin-left:6px; }
+.form .margin-left-7px { margin-left:7px; }
+.form .margin-left-8px { margin-left:8px; }
+.form .margin-left-9px { margin-left:9px; }
+.form .margin-left-10px { margin-left:10px; }
+.form .margin-left-20px { margin-left:20px; }
+.form .margin-left-30px { margin-left:30px; }
+.form .margin-left-40px { margin-left:40px; }
+.form .margin-left-50px { margin-left:50px; }
+.form .margin-left-60px { margin-left:60px; }
+.form .margin-left-70px { margin-left:70px; }
+.form .margin-left-80px { margin-left:80px; }
+.form .margin-left-90px { margin-left:90px; }
+.form .margin-left-100px { margin-left:100px; }
+.form .margin-left-110px { margin-left:110px; }
+
+.form .margin-top-10px { margin-top:10px; }
+.form .margin-top-16px { margin-top:16px; }
+
+.form .dialog { margin: 0; padding: 0; border: none; width: auto; }
+.form .break { display:block; clear:both; }
+.form div.width-25-pc { width:25%; }
+.form .hidden { display:none; }
+.form .no-hidden { display:normal; }
+
+.form div.detalhe { display:block; border:1px solid #CCC; background-color:#ECF8FF; font-weight:bold; padding:3px 10px; font-size:16px; text-align:left; }
+
+.ui-widget-content {color: #333}
+.ui-widget {font-family: 'Trebuchet MS',Tahoma,Verdana,Arial,sans-serif; font-size: 12px}
+
+ul#lista-campos li {border: 1px solid #CCCCCC;margin: 4px 0;padding: 5px;}
+
+.posicao2 {margin-right: -15px}
+
+dt#pessoa-data_falecimento-label {margin-left: 20px}
+
+
+//** Formulários ***//
+.menu-funcoes input[type="submit"], 
+.menu-funcoes input[type="button"], 
+.menu-funcoes input[type="reset"], 
+.menu-funcoes button,
+html body div.conteudo-clear form#formPessoa.form div#tabs-form-pessoa.ui-tabs div.dados-right input#editar_form{
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F1F1F1 50%, #E1E1E1 51%, #F6F6F6 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)!important;
+    border: 1px solid #BBBBBB !important;
+    border-radius: 5px !important;
+    color: #333333 !important;
+}
+
+.seleciona_liks > a > img {
+    background: none repeat scroll 0 0 #666666 !important;
+    border-radius: 20px;
+    padding: 3px;
+}
+
+/* FIM DO CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/form.css'*/
+
+/* CSS QUE ESTÃO NO ARQUIVO ----> css/icongresso/reset.css*/
+
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 12px;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration:none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background:#F0F0F0;
+}
+ol, ul, li {
+    list-style: none;
+}
+/*
+a{color:#22B5CB;}
+a:hover{color:#01838C;}*/
+
+.right{float:right;}
+.left{float:left;}
+.center{margin:0 auto 0 auto;}
+.txtcenter{text-align:center;}
+.txtleft{text-align:left;}
+.txtright{text-align:right;}
+.clear{clear:both;}
+
+
+/* FIM DO CSS QUE ESTÃO NO ARQUIVO ----> css/icongresso/reset.css*/
+
+/* CSS QUE ESTÃO NO ARQUIVO ----> css/icongresso/style.css*/
+
+@charset "utf-8";
+/* CSS Document */
+.login-screen{overflow-y: visible;}
+.wrapper {
+}
+
+@media (min-width: 942px) and (max-width: 1056px){
+    .imgEvento{
+        width: 180px;
+    }
+}
+
+@media (max-width: 1028px){
+    .imgEvento{
+        width: 100px;
+    }
+}
+
+@media (max-width: 942px){
+    .imgEvento{
+        width: 80px;
+    }
+}
+
+@media (max-width: 925px){
+    .imgEvento{
+        display: none;
+    }
+}
+
+.logo img.imgEvento{
+    max-width: 100%;
+}
+
+.header {
+    background: url(/images/icongresso/header.jpg) center no-repeat;
+    height: 99px;
+    position: relative;
+    z-index: 10;
+}
+.header-admin {
+    background: url(/images/icongresso/header.jpg) center no-repeat;
+    height: 99px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    margin: 0 0 8px 0;
+}
+.head {
+    background: url(/images/icongresso/logo-back.png) left no-repeat, 
+        url(/images/icongresso/header-back-left.png) top right no-repeat, 
+        url(/images/icongresso/head.png) top repeat-x;
+    width: 895px;
+    height: 153px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    z-index: 30;
+}
+.head-admin {
+    background: url(/images/icongresso/logo-back.png) left no-repeat, 
+        url(/images/icongresso/header-back-left.png) top right no-repeat, 
+        url(/images/icongresso/head.png) top repeat-x;
+    width: 95%;
+    margin: 0 auto 0 auto;
+    position: relative;
+    z-index: 30;
+}
+
+div.search-box{
+    margin: -85px 300px 0 0;
+    width:490px;
+    float: right;
+    position: relative;
+}
+div.search-box input{
+    border-radius:5px;
+}
+div.search-box input:focus{
+    background: #EBEBEB;
+    color: #979797;
+    transition:all linear 300ms;
+    -moz-transition:all linear 300ms;
+    -webkit-transition:all linear 300ms;
+}
+div.search-box input.pequeno{
+    width: 192px !important;	
+}
+.top-links {
+    width: 200px;
+    line-height: 90px;
+    text-align: right;
+}
+.top-links > a {
+    font-size: 11px;
+    color: #2D5066 !important;
+    margin: 0 15px 0 0;
+    padding: 0 0 0 15px;
+    border-left: 1px solid #2D5066;
+}
+.top-links > a:hover {
+    color:#00BACA !important;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px #FFF;
+}
+.logo-itg {
+    height: 99px;
+    margin:0 15px 0 0;
+}
+.logo-itg > a {
+    display: table-cell;
+    height: 99px;
+    vertical-align: middle;
+}
+.top-links > a:first-child {
+    border: 0;
+}
+
+a.modalBtn{position: absolute; top: 0; right: 200px;}
+
+.main {
+    background: url(/images/icongresso/general-background.jpg) center top no-repeat #F0F0F0;
+    width: auto;
+    height: auto;
+}
+.content {
+    width: 895px;
+    min-height: 444px;
+    margin: 0 auto 0 auto;
+}
+.logo-empresa {
+    /*width: 440px;*/
+/*    margin: 130px 0 0 0;*/
+    /*text-align: center;*/
+}
+.login-box {
+    background: url(/images/icongresso/login-back.png) 50% 50%;
+    width: 322px;
+    height: 251px;
+    margin: 130px 0px 0 0;
+    position: relative;
+}
+.login-box > h1 {
+    font-size: 0.9em;
+    position: absolute;
+    top: -25px;
+    left: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00BACA;
+}
+.login-box li, .login-box label, .login-box input {
+    font-size: 11px;
+}
+.login-box > form {
+    text-align: center;
+    margin: 50px 0 0 0;
+}
+.login-box > form > label {
+    text-align: left;
+    display: inline-table;
+    width: 83%;
+    color: #2D5066;
+    margin: 0;
+}
+.login-box > form > input[type=text], .login-box > form > input[type=password] {
+    width: 80%;
+}
+.login-box > form > div > input[type=submit] {
+    margin: 0 25px 0 0;
+}
+.login-box > form > div > ul {
+    width: 200px;
+    float: left;
+    text-align: left;
+}
+.login-box ul.datalinks {
+    margin: 50px 0 0 15px;
+    width: 300px !important;
+}
+.login-box ul.datalinks li {
+    color: #2D5066;
+    list-style: inside square;
+}
+.login-box ul.datalinks li > a {
+    color: #2D5066;
+}
+
+.logo-empresa > h2 {
+    color: #12364F;
+    text-align: left;
+    font-size: 1.1em;
+    color: #00BACA;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    top: -25px;
+}
+
+.logo-empresa > img {
+    padding: 15px 0 0 0;
+    margin: 0 50px 0 0;
+}
+.menu-nav {
+    background: url(/images/icongresso/menu.png) repeat-x;
+    margin: -54px 0 0 0;
+    font-size: 12px;
+}
+.menu-nav > ul {
+    text-align: right;
+    width: 895px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    z-index: 40;
+}
+.menu-nav > ul > li {
+    display: inline-table;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    line-height: 35px;
+    position: relative;
+}
+.menu-nav > ul > li > a {
+    color:#E84E34;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #FFF;
+}
+.menu-nav > ul > li:hover > a {
+    color: #12364F;
+}
+.menu-nav > ul > li > ul, .menu > ul > li > ul > li > ul {
+    background: url(/images/icongresso/shadow.png) top repeat-x #FFF;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    text-align: left;
+    width: 180px;
+    display: none;
+}
+.menu-nav > ul > li:hover > ul, .menu > ul > li> ul > li:hover > ul {
+    display: block;
+}
+.menu-nav > ul > li > ul > li {
+    position: relative;
+    line-height: 25px;
+    padding: 0 0 0 10px;
+    border-left: 5px solid #22B5CB;
+}
+.menu-nav > ul > li > ul > li:hover {
+    border-left: 5px solid #01838C;
+}
+.menu-nav > ul > li > ul > li > a {
+    display: block;
+    color: #66B887;
+    font-weight: bold;
+    line-height: 25px;
+}
+.menu-nav > ul > li > ul > li > a:hover, .menu > ul > li > ul > li:hover > a {
+    color: #77704C;
+}
+.menu-nav > ul > li> ul > li:hover > ul {
+    background: #C8D5DD;
+    top: 0;
+    left: 170px;
+}
+.menu-nav > ul > li> ul > li:hover > ul > li {
+    background: #FFF;
+    margin: 5px;
+    padding: 0 0 0 5px;
+    transition: all linear 300ms;
+    -moz-transition: all linear 300ms;
+    -webkit-transition: all linear 300ms;
+}
+.menu-nav > ul > li> ul > li:hover > ul > li > a {
+    background: url(/images/icase/arrow.png) left no-repeat;
+    padding: 0 0 0 12px;
+    font-weight: bold;
+}
+.menu-nav > ul > li> ul > li:hover > ul > li:hover {
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+
+.footer {
+    background: url(/images/icongresso/footer-background.jpg) center no-repeat;
+    height: 40px;
+    width: 100%;
+}
+.footer > h1 {
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+.footer > h1 > span {
+    background: url(/images/icongresso/product-background.png) no-repeat scroll left center transparent;
+    display: block;
+    height: 40px;
+    vertical-align: middle;
+    width: 256px;
+}
+.footer > h1 > span > a > img {
+    position: relative;
+    top: 5px;
+}
+.footer > h1 > strong {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.footer > h1 > strong > a > img {
+    position: relative;
+    top: 5px;
+}
+/********************************************************************************************************/
+/************************* Novos Estilos ***************************************************************/
+#menu{
+    background:url(../images/icongresso/menu-dark-gray.png) repeat-x !important;
+    /*background: none repeat scroll 0 0 #12364f;*/
+    
+}
+#menu li, #menu li > a{
+    cursor: pointer;
+    color:#355869 !important;
+}
+
+ul.dropdown ul a:hover{
+    background:#EBEBEB !important;
+    color:#FFF !important;
+}
+#centro{
+    min-height: 440px;
+}
+#esquerda{
+    min-height: 440px !important;
+}
+
+/* FIM CSS QUE ESTÃO NO ARQUIVO ----> css/icongresso/style.css*/
+
+
+/* CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/geral.css'*/
+* {margin:0; padding:0; list-style:none;}
+
+.optional{
+    font-weight: normal;
+}
+
+body.itarget{background:#d9d9d9 url(/images/itarget/bg.gif) top left repeat-x; }
+body{color: #777;font-family: Arial, Helvetica, sans-serif;font-size: 12px;line-height:1.5;margin: 0;padding: 0;text-align:left;}
+
+fieldset {border: 1px solid #CCC; padding: 10px;}
+fieldset legend {padding: 0 5px; color: #333; font-weight: bold; font-size: 14px}
+
+/*p { margin: 0 0 10px 0; }*/
+
+ul{ margin:0;padding:0; }
+ul li{ list-style-image:none;list-style-type:none;margin:0;padding:0; }
+
+#outros-sistemas {float: left; margin-left: 5px;}
+#outros-sistemas ul {  }
+#outros-sistemas ul li{ display: inline; margin-right: 20px; }
+
+#geral { min-width:960px;margin: 0 15px;	overflow:hidden }
+#geral_login { width:700px; margin: 0 auto;}
+
+#topo { height:95px; }
+#topo .cliente, #topo .logo { float:left; }
+#topo .buscar {float:right;  margin-top: 9px; width:400px}
+#topo .buscar input {margin:0px}
+#topo .buscar .campo_buscar {background-color:#f2f2f2; padding:6px; margin-bottom: 5px}
+#topo_login {height:124px;}
+
+.caminho {background-color:#F2F2F2; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; padding: 6px; margin-bottom:10px; font-size:11px}
+.caminho a {margin:0 10px;}
+
+#fechar_esquerda {background:#d9d9d9 url(/images/itarget/pontos.gif) center  no-repeat; height:100% !important; width:auto!important; overflow:hidden; position:absolute; right:0; top:0px; padding:0; margin:0;}
+
+.texto_buscar {margin-bottom:10px;}
+.fechar_site {float:right; width: 125px }
+.fechar_site input{float:right; padding:0px!important; padding-right:18px!important; border:0px;}
+
+#topo img {margin-top:10px;}
+#topo .topo_logo {border-right: 1px solid #d9d9d9; display: block;float: left;margin-right: 15px;overflow: hidden;padding-right: 15px;}
+
+h2 .tit { margin-right:10px;}
+.buscar #formulario_busca input.form-text { width:310px !important; }
+
+.cor_modulo .codigo {float:left;}
+.cor_modulo .codigo p {margin: 0; padding: 9px 15px;}
+.cor_modulo .codigo p strong {padding: 0 18px;}
+.cor_modulo .circulo {float:right;}
+
+.campos_modulo {border-bottom:1px dotted #a6a6a6; padding:5px 4px; overflow:hidden}
+.campos_modulo.branco{ background-color:#f6f6f6; }
+.campos_modulo.cinza{ background-color:#ebebeb; }
+.seleciona_modulos{float:left;}
+.texto_modulos{float:left; margin-left:20px;}
+.campos_modulo .links_modulos {float:right;}
+input.seleciona {margin-right:15px;}
+
+#menu {height:45px; -moz-border-radius: 6px 6px 0 0; -webkit-border-radius:  6px 6px 0 0; border-radius:  6px 6px 0 0; padding-left: 11px;}
+
+#centro { background-color:#E8E8E8;border: 1px solid #B7C6CF; overflow:hidden}
+#esquerda {float: left;width: 178px;margin: 0;padding:10px;position: relative; min-height: 300px }
+
+#esquerda .seleciona_recentes {background-color:#c8d5dd; color:#615869; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; padding: 6px; float:left; width:88%; margin-bottom:2px; position:relative; }
+#esquerda .seleciona_recentes p {
+    max-width: 85px; 
+    line-height:normal;
+    font-size: 10px;
+}
+
+p{
+    margin: 0px !important;
+}
+
+#abas_links_rapidos .seleciona_liks {
+    background-color:#c8d5dd !important; 
+    color:#615869 !important;  
+    -moz-border-radius: 6px ; 
+    -webkit-border-radius: 6px; 
+    border-radius: 6px; 
+    padding: 6px; 
+    float:left; 
+    width:88%; 
+    margin-bottom:2px; 
+    position:relative; 
+}
+
+#esquerda .seleciona_liks p {
+    max-width: 85px;
+    line-height:normal;
+    font-size: 12px;
+}
+
+#esquerda .aba_ativa {background-color: #c8d5dd; border: 1px solid #c8c5cc;}
+#esquerda .aba_inativa {background-color: #fff}
+
+
+#direita {margin-left: 153px; /*border-left: 1px solid #f3f3f3;*/ padding: 1em 1.4em; background-color:#E8E8E8;}
+.conteudo_direita {float: left; width: 99%}
+
+#rodape {clear: both;border: 1px solid #F3F3F3;border-top:0px solid #e8e8e8;background-color:#e8e8e8;overflow:hidden;text-align: right}
+#rodape img { /*float:left;*/ padding:10px;}
+
+.title-form {font-size: 20px; clear: both; border-bottom: 1px dashed #CCC; text-transform: none; margin-bottom: 12px}
+.paddingTop {padding-top: 10px}
+.checkbox-list {}
+.checkbox-list label {margin-right: 10px; margin-bottom: 5px}
+
+#MensagensSistema {margin-bottom: 20px}
+
+.flexigrid div.fbutton .add {background: url("/images/icons/add.png") no-repeat scroll left center transparent}
+.flexigrid div.fbutton .delete {background: url("/images/icons/close.png") no-repeat scroll left center transparent}
+.flexigrid div.fbutton .excel {background: url("/images/icons/report-excel.png") no-repeat scroll left center transparent}
+.flexigrid div.fbutton .edit {background: url("/images/icons/blue-document--pencil.png") no-repeat scroll left center transparent}
+.flexigrid div.fbutton .mail {background: url("/images/icons/mail.png") no-repeat scroll left center transparent}
+.pGroup select {width: auto}
+.flexigrid div.pDiv input {width: auto}
+.flexigrid .gBlock{border-left: 1px solid #CCC; border-right: 1px solid #CCC}
+
+fieldset.style {border: 1px solid #CCC}
+fieldset.style label {margin-right: 10px}
+
+.tableStyle * {font-size: 12px}
+.tableStyle {border-bottom: 1px solid #CCC; border-left: 1px solid #CCC; width: 100%}
+.tableStyle thead tr td {background: #F1F1F1; font-weight: bold; text-align: left}
+.tableStyle tr td {border-top: 1px solid #CCC; border-right: 1px solid #CCC; padding: 3px}
+
+.flexigrid select, .flexigrid input { width: auto; display: inline; }
+
+#loading-status {background-color: #FFD700;border: 1px solid #FF9A00;color: #333333;float: right;font-weight: bold;height: 18px;left: 50%;margin: -39px 0 0 -50px;padding: 3px; position: absolute; right: 0; text-align: center; width: 100px;}
+
+label{ font-weight: normal; }
+.required {font-weight: bold;}
+
+ul.errors {display: none;}
+
+.clear {clear: both}
+.width-auto {width: auto}
+.float-left {float: left}
+.float-right {float: right}
+
+.esquerda_recentes h2, .esquerda_links h2 {font-size: 11px}
+
+/*******************/
+/* Form de Pessoas */
+/*******************/
+.formulario-pessoas textarea#associacao-observacao {width: 700px; height: 100px}
+
+.box-busca-avancada { display: none; }
+
+div.workarea { padding:10px; float:left; width:31%; }
+.invalido td {color: red !important;}
+.radio-style {margin-top: 10px}
+.radio-style br {display: none; float: left}
+.radio-style label {float: left; margin-right: 6px}
+
+.cursor {
+    cursor: pointer;
+}
+
+.flexigrid div.fbutton .blue-document-convert {
+    background: url("/images/icons/blue-document-convert.png") no-repeat scroll left center transparent;
+}
+
+.flexigrid div.fbutton .blue-document-share {
+    background: url("/images/icons/blue-document-share.png") no-repeat scroll left center transparent;
+}
+
+.flexigrid div.fbutton .blue-documents-stack {
+    background: url("/images/icons/blue-documents-stack.png") no-repeat scroll left center transparent;
+}
+
+.flexigrid div.fbutton .sum {
+    background: url("/images/icons/sum.png") no-repeat scroll left center transparent;
+}
+
+.colForm { height: 55px; float: left; margin-right: 10px; }
+.colForm label.error { font-size: 11px; color: red; margin: 0px; padding: 0px; }
+ul.form-inline li{display: inline-table; min-width: 400px; margin: 0 10px 0 0;}
+
+.color-green {color: green}
+.color-red {color: orangered}
+.color-grey { color: grey}
+.color-blue { color: royalblue} 
+
+.dados-left{ float: left}
+.dados-right{float: left}
+.menu-funcoes{border: 1px solid #CCCCCC;float: right;height: 330px;margin-top: 1em;padding: 10px;width: 140px;}
+form .delete {background: url("/images/icons/delete.png") no-repeat scroll left center transparent;}
+
+.camposMagicos {float: left;background: #09C;color:#FFF;padding: 5px;margin:3px;cursor: pointer;border-radius: 5px;text-transform: capitalize;transition: all linear 300ms;-webkit-transition: all linear 300ms;-moz-transition: all linear 300ms; }
+.camposMagicos:hover{background: #FFF;box-shadow: inset 0 0 3px #09C;color:#09C}
+#camposSelecinados {width: 100%;float: left;height: 100%; overflow-y: scroll; border: 1px solid #979797;margin-top:5px;padding: 5px}
+
+
+.well{
+    background-color: #ccc !important;
+    background-image: none !important;
+}
+
+legend{
+    line-height: 30px;
+    width: 100%;
+}
+
+form hr, #listagem hr {
+    border-bottom: 2px solid #12364e;font-size: 1.3em;  
+    margin-top: -25px;
+}
+/* FIM DO CSS QUE ESTÃO NO ARQUIVO ----> css/itarget/geral.css*/
+
+.frame_conteudo{
+    min-height: 500px !important;
+}

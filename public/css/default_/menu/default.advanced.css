@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "default.css";
+
+/*-------------------------------------------------/
+ * @section		Base Style Extension
+ */
+ul.dropdown li a {display: block;padding: 12px 10px;}
+
+/*-------------------------------------------------/
+ * @section		Base Style Override
+ */
+
+ul.dropdown li {padding: 0;}
+
+/*-------------------------------------------------/
+ * @section		Base Style Reinitiate: post-override activities
+ */
+
+ul.dropdown li.dir {padding: 12px 30px 12px 10px;}
+ul.dropdown li.dir:hover {}
+ul.dropdown ul li.dir {padding: 10px;}
+
+/*-------------------------------------------------/
+ * @section		Custom
+ */
+ul.dropdown ul {padding: 0 10px;}
+ul.dropdown ul a {width: 140px;padding: 3px 5px;background: url(images/pattern2.png) 0 0 repeat-x;}
+
+ul.dropdown ul a:hover{
+    background:#EBEBEB !important;
+    color:#12364f !important;
+}
+
+ul.dropdown ul ul {padding: 0;margin-left: -5px; }

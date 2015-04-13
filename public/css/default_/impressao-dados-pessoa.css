@@ -1,0 +1,55 @@
+body {
+    font: 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+    margin: 10 0 10 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+#container{
+    text-align: left;
+    width: 800px;
+    margin: auto;
+    display: block;
+    background-color: rgba(30,144,255, 0.06);
+}
+
+#container legend{
+    border-style: none;
+}
+
+.content{
+    padding: 5px;
+}
+
+#cabecalho{
+    color: #333300;
+    font-size:12pt;
+    font-weight: bold;
+    padding: 5px;
+    
+}
+
+.cabecalho-right{
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    width: 425px;
+    margin-top: 10px;
+}
+
+#corpo{
+    margin: 10 0 10 0px;
+}
+
+#rodape{
+    background-color: #ccc;
+    height: 20px;
+    text-align:right;
+    clear: both;
+}
+
+#rodape span{
+    padding: 5px;
+    margin: 5px;
+    font-size: 13px;
+}

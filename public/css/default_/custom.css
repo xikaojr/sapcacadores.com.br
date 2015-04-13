@@ -1,0 +1,47 @@
+.login-screen { overflow: hidden; }
+div.head { 
+	max-width: 895px; 
+	width: auto;
+}
+@media (max-width: 767px) { 
+	div.head { 
+		background: url("/images/icongresso/head.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+	}
+}
+.logo-cliente img {
+    display: block;
+    margin: 188px auto 10px;
+	max-width: 100%;
+}
+.logo, .logo img { max-width: 100% }
+@media (max-width: 767px) { 
+	body.login-screen { overflow: auto; }
+	div.logo-cliente img { margin: 35px auto 10px; } 
+	div.mainbox { margin: 20px auto 80px; }
+	div.footer-login .container { text-align: center; }
+}
+div.main { height: 668px }
+.mainbox {
+	margin: 85px auto 100px;
+}
+.footer-login {
+    background-color: #12364e;
+    border-top: 5px solid #00b2cc;
+    bottom: 0;
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+    position: fixed;
+    text-align: right;
+    width: 100%;
+	z-index:999;
+}
+.footer-login img {
+    max-width: 30px;
+	vertical-align: middle;
+}
+.footer-login span {
+    font-size: 12px;
+    padding: 3px 5px;
+}
+	
