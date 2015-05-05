@@ -76,11 +76,10 @@
                             <td>
                                 <a href="<?php echo $this->baseUrl('/default/atletas/edit/id/' . $atleta['id']); ?>" title="Editar"><i class="fa fa-edit" style="font-size: 20px;"></i></a>
                                 <?php if ($atleta['situacao'] == Atleta::ATIVO): ?>
-                                    <a href="javascript:;" onclick="alterStatus('<?php echo Atleta::INATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Inativar Atleta"><i class = "fa fa-times" style = "font-size: 20px;"></i></a>
+                                    <a href = "javascript:;" onclick = "alterStatus('<?php echo Atleta::INATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Inativar Atleta"><i class = "fa fa-times" style = "font-size: 20px;"></i></a>
                                 <?php else: ?>
-                                    <a href="javascript:;" onclick="alterStatus('<?php echo Atleta::ATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Ativar Atleta"><i class = "fa fa-check" style = "font-size: 20px;"></i></a>
-                                <?php endif; ?>
-                                <a href="javascript:;" onclick="deletar('<?php echo $atleta['id']; ?>')" title = "Deletar Atleta"><i class = "fa fa-trash" style = "font-size: 20px;"></i></a>
+                                    <a href = "javascript:;" onclick = "alterStatus('<?php echo Atleta::ATIVO; ?>', '<?php echo $atleta['id']; ?>')" title = "Ativar Atleta"><i class = "fa fa-check" style = "font-size: 20px;"></i></a>
+                                    <?php endif; ?>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -104,7 +103,6 @@
             $(this).css('display', corresponde ? '' : 'none');
         });
     });
-
     /**
      * Ativar atleta, alterar status para ATIVO
      * @param {int} id identifcador do atleta
@@ -117,29 +115,6 @@
             data: {'id': id, 'status': status},
             dataType: 'json',
             url: baseUrl + "/atletas/ativar",
-            success: function (json) {
-                if (json.status) {
-                    bootbox.alert(json.msg, function () {
-                        location.href = location.href;
-                    });
-                } else {
-                    bootbox.alert(json.msg);
-                }
-            }
-        });
-    }
-
-    /**
-     * Deletar atleta
-     * @param {int} id identifcador do atleta
-     */
-    function deletar(id) {
-
-        $.ajax({
-            type: 'POST',
-            data: {'id': id},
-            dataType: 'json',
-            url: baseUrl + "/atletas/delete",
             success: function (json) {
                 if (json.status) {
                     bootbox.alert(json.msg, function () {

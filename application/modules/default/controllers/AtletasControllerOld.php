@@ -5,7 +5,8 @@ class AtletasController extends App_Controller_Default {
     protected $_class = null;
     protected $_userLogged = null;
 
-    public function init() {
+    public function init()
+    {
         parent::init();
         $this->_class = new Atleta();
         $this->view->form = $this->_form = new App_Form_Default_Atleta_Form();
@@ -16,12 +17,14 @@ class AtletasController extends App_Controller_Default {
         }
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         parent::indexAction();
         $this->view->atletas = $atletas = $this->_class->getList(array('order' => 'nome'));
     }
 
-    public function listJsonAction() {
+    public function listJsonAction()
+    {
         $this->noRender()->noLayout();
         $data = $this->_class->getAll('nome');
         echo Zend_Json_Encoder::encode($data);
@@ -35,7 +38,8 @@ class AtletasController extends App_Controller_Default {
      * @throws ModelException
      * @throws Exception
      */
-    public function uploadFoto($foto, $row) {
+    public function uploadFoto($foto, $row)
+    {
 
         $nomeArquivo = $foto->getFileName();
 
@@ -66,7 +70,8 @@ class AtletasController extends App_Controller_Default {
      * ser rescrito no controller!.
      * @throws Exception
      */
-    public function createAction() {
+    public function createAction()
+    {
 
         $this->view->iconAction = 'check-square-o';
         $this->view->titleAction = 'Cadastrar ' . ucfirst($this->_controller);
@@ -139,7 +144,8 @@ class AtletasController extends App_Controller_Default {
      * ser rescrito no controller!.
      * @throws Exception
      */
-    public function createOutsideAction() {
+    public function createOutsideAction()
+    {
 
         $this->view->iconAction = 'check-square-o';
         $this->setLayout('extra');
@@ -198,7 +204,8 @@ class AtletasController extends App_Controller_Default {
         $this->render('form-outside');
     }
 
-    public function editAction() {
+    public function editAction()
+    {
 
         $this->view->iconAction = 'edit';
         $this->view->titleAction = 'Editar ' . ucfirst($this->_controller);
@@ -244,7 +251,8 @@ class AtletasController extends App_Controller_Default {
         $this->render('form');
     }
 
-    public function ativarAction() {
+    public function ativarAction()
+    {
         $this->noLayout()->noRender();
         $params = $this->get;
 
@@ -270,28 +278,8 @@ class AtletasController extends App_Controller_Default {
         echo $this->view->json($json);
     }
 
-    public function deleteAction() {
-        $this->noLayout()->noRender();
-        $params = $this->get;
-
-        try {
-
-            $this->_class->getDefaultAdapter()->beginTransaction();
-            $this->_class->delete("id = " . $params['id']);
-
-            $json['status'] = 1;
-            $json['msg'] = "Atleta deletado com sucesso!";
-            $this->_class->getDefaultAdapter()->commit();
-        } catch (App_Db_Exception $e) {
-            $this->_class->getDefaultAdapter()->rollBack();
-            $json['msg'] = $e->getMessage();
-            $json['msg_type'] = 'error';
-        }
-
-        echo $this->view->json($json);
-    }
-
-    public function setApelidoAction() {
+    public function setApelidoAction()
+    {
         $this->noLayout()->noRender();
         $params = $this->get;
 
@@ -317,7 +305,8 @@ class AtletasController extends App_Controller_Default {
         echo $this->view->json($json);
     }
 
-    public function exportToXlsAction() {
+    public function exportToXlsAction()
+    {
         $this->_helper->viewRenderer->setNoRender();
 
         $dados = $this->_class->getAll('nome');
